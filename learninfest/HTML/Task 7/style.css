@@ -1,0 +1,19 @@
+.header
+{
+    text-align: left;
+    background-color: darkgray;
+    height: 75px;
+    
+}
+.body
+{
+    text-align: left;
+    background-color: white;
+    height: 500px;
+}
+
+.end
+{
+    text-align: left;
+    background-color: gray;
+}
