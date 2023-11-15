@@ -1,0 +1,35 @@
+body{
+    margin:0%
+}
+
+#main-container{
+    height: 100vh;
+    background-image: linear-gradient(to right, #586eff, rgb(228, 236, 73));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#table{
+    width: 250px;
+    text-align: center;
+    font-family: Roboto;
+    background-color: whitesmoke;
+    border-radius: 7px;
+    box-shadow: 5px 5px 15px 0px rgba(219, 8, 8, 0.37);
+}
+
+th{
+    background-color: blue;
+    color: #fff;
+    padding: 10px;
+}
+
+td{
+    padding: 10px;
+    border-bottom: 1px solid yellowgreen;
+}
+
+th, td{
+    border-radius: 7px;
+}

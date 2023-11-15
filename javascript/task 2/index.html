@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 2</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div id="main-container">
+        <div id="inputs" class="elements">
+            <div id="inp1" class="input">
+                <div class="inp-tab">Number 1</div>
+                <input type="text" class="inp-tab" id="number1" placeholder="number 1">
+            </div>
+            <div id="inp2" class="input">
+                <div class="inp-tab">Number 2</div>
+                <input type="text" class="inp-tab" id="number2" placeholder="number 2">
+            </div>   
+        </div>
+        <button id="sum" onclick="sum()" class="elements">Sum</button>
+        <div id="output" class="elements"></div>
+    </div>
+    <script>
+        function sum() {
+            let number1 = document.getElementById("number1").value;
+            let number2 = document.getElementById("number2").value;
+            let output = document.getElementById("output");
+            let ans = parseInt(number1) + parseInt(number2);
+            output.innerHTML = ans;
+            console.log("The Answer is "+ans);
+        }
+    </script>
+</body>
+</html>
