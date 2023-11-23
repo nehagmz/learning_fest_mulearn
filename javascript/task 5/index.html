@@ -3,32 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Task 5</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
 </head>
 <body>
-    <div id="main-container">
-        <table id="table">
+    <table id="personstable">
+        <thead>
             <tr>
-                <th>Name</th>
-                <th>Age</th>
+                <th>name</th>
+                <th>age</th>
+                <th>place</th>
             </tr>
-        </table>
-    </div>
+        </thead>
+        <tbody id="tbody">
+        </tbody>
+    </table>
+
     <script>
+        fetch("./persons.json")
+            .then(function(response) {
+                return response.json();
+            })
+            .then(function(data) {
+                console.log(data);
 
-    fetch('task 5/persona.json').then(function(response) {
-      return response.json();
-    }).then (function(data) {
-      for (var i = 0; i < data.length; i++) {
-        document.getElementById("table").innerHTML 
-        +="<tr><td>" + data[i].name + "</td><td>" + data[i].age + "</td></tr>";
-    }
-    })
-    .catch(function(error) {
-      alert(error);
-    })
+                const table = document.getElementById('personstable');
+                const tbody = document.getElementById('tbody');
 
+                data.forEach(function(person) {
+                    const row = document.createElement('tr');
+
+                    const name = document.createElement('td');
+                    name.textContent = person.name;
+                    row.appendChild(name);
+
+                    const age = document.createElement('td');
+                    age.textContent = person.age;
+                    row.appendChild(age);
+
+                    const place = document.createElement('td');
+                    place.textContent = person.place; // Assuming 'place' exists in your JSON
+                    row.appendChild(place);
+
+                    tbody.appendChild(row);
+                });
+            })
+            .catch(function(error) {
+                console.error('Error fetching data:', error);
+            });
     </script>
 </body>
 </html>
